@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get EduMatX</title>
+  <link rel="icon" type="image/svg+xml" href="edumatx_logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gateway-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .app-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 16px;
+      display: block;
+      border-radius: 16px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .footer-links {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="gateway-card">
+    <img src="edumatx_logo.svg" alt="EduMatX" class="app-logo">
+    <h1>EduMatX</h1>
+    <p class="subtitle" id="status-text">Detecting your device to launch the best experience...</p>
+
+    <div class="status-badge" id="status-indicator">
+      <div class="spinner"></div>
+      <span>Routing you automatically...</span>
+    </div>
+
+    <div class="action-group">
+      <a href="#" id="android-btn" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.996-3.4572c.1011-.1756.0409-.4008-.1347-.5019-.1756-.1011-.4008-.0409-.5019.1347l-2.0231 3.5041C15.702 8.358 13.916 8 12 8s-3.702.358-5.2178 1.0011L4.7591 5.497c-.1011-.1756-.3263-.2358-.5019-.1347-.1756.1011-.2358.3263-.1347.5019l1.996 3.4572C2.6884 11.0943.3432 14.6534 0 18.918h24c-.3432-4.2646-2.6884-7.8237-6.1185-9.5966"/></svg>
+        Download Android APK
+      </a>
+      <a href="#" id="ios-btn" class="btn btn-secondary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.71-.93 2.73.99.08 2.02-.48 2.64-1.23z"/></svg>
+        Launch Web App (iOS)
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://marwanisawi5.github.io/edumatx-legal/privacy-policy.html">Privacy Policy</a>
+      <a href="https://marwanisawi5.github.io/edumatx-legal/terms-and-conditions.html">Terms &amp; Conditions</a>
+    </div>
+  </main>
+
+  <script>
+    const ANDROID_APK_URL = "YOUR_DIRECT_APK_DOWNLOAD_URL";
+    const IOS_WEB_APP_URL = "https://marwanisawi5.github.io/app/"; // Replace with your Site 3 URL
+
+    const androidBtn = document.getElementById("android-btn");
+    const iosBtn = document.getElementById("ios-btn");
+    const statusText = document.getElementById("status-text");
+    const statusIndicator = document.getElementById("status-indicator");
+
+    androidBtn.href = ANDROID_APK_URL;
+    iosBtn.href = IOS_WEB_APP_URL;
+
+    function handleRouting() {
+      const ua = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+
+      if (/android/i.test(ua)) {
+        statusText.innerText = "Redirecting to your direct Android APK download...";
+        setTimeout(() => {
+          window.location.href = ANDROID_APK_URL;
+        }, 800);
+        return;
+      }
+
+      const isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isIOS) {
+        statusText.innerText = "Opening EduMatX Web App for iOS...";
+        setTimeout(() => {
+          window.location.href = IOS_WEB_APP_URL;
+        }, 800);
+        return;
+      }
+
+      statusIndicator.style.display = "none";
+      statusText.innerText = "Select your platform below to access EduMatX:";
+    }
+
+    window.addEventListener("DOMContentLoaded", handleRouting);
+  </script>
+</body>
+</html>
