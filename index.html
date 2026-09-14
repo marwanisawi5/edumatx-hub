@@ -82,29 +82,6 @@
       line-height: 1.5;
     }
 
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-
-    .spinner {
-      width: 16px;
-      height: 16px;
-      border: 2px solid currentColor;
-      border-right-color: transparent;
-      border-radius: 50%;
-      animation: spin 0.75s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
     .action-group {
       display: flex;
       flex-direction: column;
@@ -172,12 +149,8 @@
   <main class="gateway-card">
     <img src="edumatx_logo_web.svg" alt="EduMatX" class="app-logo">
     <h1>EduMatX</h1>
-    <p class="subtitle" id="status-text">Detecting your device to launch the best experience...</p>
-
-    <div class="status-badge" id="status-indicator">
-      <div class="spinner"></div>
-      <span>Routing you automatically...</span>
-    </div>
+    
+    <p class="subtitle" id="status-text">Select your platform below to access EduMatX</p>
 
     <div class="action-group">
       <a href="#" id="android-btn" class="btn btn-primary">
@@ -194,44 +167,17 @@
       <a href="https://marwanisawi5.github.io/edumatx-hub/privacy-policy.html">Privacy Policy</a>
       <a href="https://marwanisawi5.github.io/edumatx-hub/terms-and-conditions.html">Terms &amp; Conditions</a>
     </div>
+    
   </main>
 
   <script>
     const ANDROID_APK_URL = "YOUR_DIRECT_APK_DOWNLOAD_URL";
     const IOS_WEB_APP_URL = "https://marwanisawi5.github.io/app/";
-    const androidBtn = document.getElementById("android-btn");
-    const iosBtn = document.getElementById("ios-btn");
-    const statusText = document.getElementById("status-text");
-    const statusIndicator = document.getElementById("status-indicator");
-
-    androidBtn.href = ANDROID_APK_URL;
-    iosBtn.href = IOS_WEB_APP_URL;
-
-    function handleRouting() {
-      const ua = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
-
-      if (/android/i.test(ua)) {
-        statusText.innerText = "Redirecting to your direct Android APK download...";
-        setTimeout(() => {
-          window.location.href = ANDROID_APK_URL;
-        }, 800);
-        return;
-      }
-
-      const isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      if (isIOS) {
-        statusText.innerText = "Opening EduMatX Web App for iOS...";
-        setTimeout(() => {
-          window.location.href = IOS_WEB_APP_URL;
-        }, 800);
-        return;
-      }
-
-      statusIndicator.style.display = "none";
-      statusText.innerText = "Select your platform below to access EduMatX:";
-    }
-
+    document.getElementById("android-btn").href = ANDROID_APK_URL
+    document.getElementById("ios-btn").href = IOS_WEB_APP_URL
     window.addEventListener("DOMContentLoaded", handleRouting);
   </script>
+  
 </body>
+  
 </html>
