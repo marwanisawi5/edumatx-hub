@@ -171,11 +171,13 @@
   </main>
 
   <script>
-    const ANDROID_APK_URL = "YOUR_DIRECT_APK_DOWNLOAD_URL";
+    const ANDROID_APK_URL = "https://github.com/marwanisawi5/edumatx-hub/releases/download/v1.0.0/app-release.apk";
     const IOS_WEB_APP_URL = "https://marwanisawi5.github.io/edumatx-web-app/";
-    document.getElementById("android-btn").href = ANDROID_APK_URL
-    document.getElementById("ios-btn").href = IOS_WEB_APP_URL
-    window.addEventListener("DOMContentLoaded", handleRouting);
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("android-btn").href = ANDROID_APK_URL
+      document.getElementById("ios-btn").href = IOS_WEB_APP_URL
+      handleRouting();
+    });
   </script>
   
 </body>
