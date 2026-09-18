@@ -171,14 +171,18 @@
   </main>
 
   <script>
-    const ANDROID_APK_URL = "https://marwanisawi5.github.io/edumatx-hub/app-release.apk";
-    const IOS_WEB_APP_URL = "https://marwanisawi5.github.io/edumatx-web-app/";
-    window.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("android-btn").href = ANDROID_APK_URL;
-      document.getElementById(ios-btn).href = IOS_WEB_APP_URL;
+  const ANDROID_APK_URL = "https://marwanisawi5.github.io/edumatx-hub/app-release.apk";
+  const IOS_WEB_APP_URL = "https://marwanisawi5.github.io/edumatx-web-app/";
+  window.addEventListener("DOMContentLoaded", () => {
+    const androidBtn = document.getElementById("android-btn");
+    const iosBtn = document.getElementById("ios-btn");
+    if (androidBtn) androidBtn.href = ANDROID_APK_URL;
+    if (iosBtn) iosBtn.href = IOS_WEB_APP_URL;
+    if (typeof handleRouting === "function") {
       handleRouting();
-    });
-  </script>
+    }
+  });
+</script>
   
 </body>
   
